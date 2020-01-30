@@ -5,9 +5,9 @@ from flask import Flask
 from flask import Flask, render_template
 app = Flask(__name__)
 # 
-# RegionName = ec2_metadata.region
-dynamodb = boto3.resource('dynamodb',region_name="us-east-1")
-#dynamodb = boto3.resource('dynamodb',region_name=os.environ['AWS_REGION'])
+RegionName = ec2_metadata.region
+#dynamodb = boto3.resource('dynamodb',region_name="us-east-1")
+dynamodb = boto3.resource('dynamodb',region_name=os.environ['AWS_REGION'])
 
 fopen = open("/etc/environment", "r")
 for x in fopen:
